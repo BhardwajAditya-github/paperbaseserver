@@ -25,9 +25,9 @@ db.once('open', () => {
 
 async function authorize(){
     const jwtClient = new google.auth.JWT(
-      apikeys.client_email,
+      process.env.GOOGLE_CLIENT_EMAIL,
       null,
-      apikeys.private_key,
+      process.env.GOOGLE_PRIVATE_KEY,
       SCOPE
     );
   
